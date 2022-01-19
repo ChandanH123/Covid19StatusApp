@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StatesTableComponent } from './states-table/states-table.component';
 import { DistrictsTableComponent } from './districts-table/districts-table.component';
-import { Error404Component } from './error404/error404.component';
+
 @NgModule({
   declarations: [
     AppComponent,
