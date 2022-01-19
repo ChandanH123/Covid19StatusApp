@@ -15,7 +15,6 @@ import { Error404Component } from './error404/error404.component';
     DashboardComponent,
     StatesTableComponent,
     DistrictsTableComponent,
-    Error404Component
   ],
   imports: [
     BrowserModule,
