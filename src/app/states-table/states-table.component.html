@@ -1,0 +1,180 @@
+<!-- <div class="table-responsive text-center">
+    <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">State</th>
+        <th scope="col">Confirmed</th>
+        <th scope="col">Active</th>
+        <th scope="col">Recovered</th>
+        <th scope="col">Deceased</th>
+        <th scope="col">Tested</th>
+        <th scope="col">Vaccine Doses Administered</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let d1 of stateCodes;let i=index">
+      <tr *ngIf="d1!='TT'">
+        <td>{{i+1}}</td>
+        <td [ngSwitch]="d1">
+            <span *ngSwitchCase="'AN'">Andaman and Nicobar Islands</span>
+            <span *ngSwitchCase="'AP'">Andhra Pradesh</span>
+            <span *ngSwitchCase="'AR'">Arunachal Pradesh</span>
+            <span *ngSwitchCase="'AS'">Assam</span>
+            <span *ngSwitchCase="'BR'">Bihar</span>
+            <span *ngSwitchCase="'CH'">Chandigarh</span>
+            <span *ngSwitchCase="'CT'">Chhattisgarh</span>
+            <span *ngSwitchCase="'DN'">Dadra and Nagar Haveli and Daman and Diu</span>
+            <span *ngSwitchCase="'DL'">Delhi</span>
+            <span *ngSwitchCase="'GA'">Goa</span>
+            <span *ngSwitchCase="'GJ'">Gujarat</span>
+            <span *ngSwitchCase="'HR'">Haryana</span>
+            <span *ngSwitchCase="'HP'">Himachal Pradesh</span>
+            <span *ngSwitchCase="'JK'">Jammu and Kashmir</span>
+            <span *ngSwitchCase="'JH'">Jharkhand</span>
+            <span *ngSwitchCase="'KA'">Karnataka</span>
+            <span *ngSwitchCase="'KL'">Kerala</span>
+            <span *ngSwitchCase="'LA'">Ladakh</span>
+            <span *ngSwitchCase="'LD'">Lakshadweep</span>
+            <span *ngSwitchCase="'MP'">Madhya Pradesh</span>
+            <span *ngSwitchCase="'MH'">Maharashtra</span>
+            <span *ngSwitchCase="'MN'">Manipur</span>
+            <span *ngSwitchCase="'ML'">Meghalaya</span>
+            <span *ngSwitchCase="'MZ'">Mizoram</span>
+            <span *ngSwitchCase="'NL'">Nagaland</span>
+            <span *ngSwitchCase="'OR'">Odisha</span>
+            <span *ngSwitchCase="'PY'">Puducherry</span>
+            <span *ngSwitchCase="'PB'">Punjab</span>
+            <span *ngSwitchCase="'RJ'">Rajasthan</span>
+            <span *ngSwitchCase="'SK'">Sikkim</span>
+            <span *ngSwitchCase="'TN'">Tamil Nadu</span>
+            <span *ngSwitchCase="'TG'">Telangana</span>
+            <span *ngSwitchCase="'TR'">Tripura</span>
+            <span *ngSwitchCase="'UP'">Uttar Pradesh</span>
+            <span *ngSwitchCase="'UT'">Uttarakhand</span>
+            <span *ngSwitchCase="'WB'">West Bengal</span>
+        
+        </td>
+        <td>{{totalData[d1].total.confirmed}}</td>
+        <td *ngIf="!totalData[d1].total.other">{{totalData[d1].total.confirmed - totalData[d1].total.deceased - totalData[d1].total.recovered}}</td>
+        <td *ngIf="totalData[d1].total.other">{{totalData[d1].total.confirmed - totalData[d1].total.deceased - totalData[d1].total.recovered - totalData[d1].total.other}}</td> 
+        <td>{{totalData[d1].total.recovered}}</td>
+        <td>{{totalData[d1].total.deceased}}</td>
+        <td>{{totalData[d1].total.tested}}</td>
+        <td>{{totalData[d1].total.vaccinated1 + totalData[d1].total.vaccinated2}}</td>
+      </tr>
+    </tbody>
+    <tbody *ngFor="let d1 of stateCodes;let i=index">
+        <tr *ngIf="d1=='TT'">
+            <td></td>
+            <td><h6>Total</h6></td>
+            <td><h6>{{totalData[d1].total.confirmed}}</h6></td>
+            <td *ngIf="!totalData[d1].total.other"><h6>{{totalData[d1].total.confirmed - totalData[d1].total.deceased - totalData[d1].total.recovered}}</h6></td>
+            <td *ngIf="totalData[d1].total.other"><h6>{{totalData[d1].total.confirmed - totalData[d1].total.deceased - totalData[d1].total.recovered - totalData[d1].total.other}}</h6></td> 
+            <td><h6>{{totalData[d1].total.recovered}}</h6></td>
+            <td><h6>{{totalData[d1].total.deceased}}</h6></td>
+            <td><h6>{{totalData[d1].total.tested}}</h6></td>
+            <td><h6>{{totalData[d1].total.vaccinated1 + totalData[d1].total.vaccinated2}}</h6></td>
+          </tr>
+    </tbody>
+  </table>
+</div> -->
+
+
+<div class="card mb-4">
+  <!-- <div class="card-header">
+      <i class="fas fa-table me-1"></i>
+      DataTable Example
+  </div> -->
+  <div class="card-body">
+      <table id="datatablesSimple">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>State</th>
+            <th>Confirmed</th>
+            <th>Active</th>
+            <th>Recovered</th>
+            <th>Deceased</th>
+            <th>Tested</th>
+            <th>Vaccine Doses Administered</th>
+          </tr>
+        </thead>
+          <tbody *ngFor="let d1 of stateCodes;let i=index">
+            <tr *ngIf="d1!='TT'">
+              <td>{{i+1}}</td>
+              <td [ngSwitch]="d1">
+                  <span *ngSwitchCase="'AN'">Andaman and Nicobar Islands</span>
+                  <span *ngSwitchCase="'AP'">Andhra Pradesh</span>
+                  <span *ngSwitchCase="'AR'">Arunachal Pradesh</span>
+                  <span *ngSwitchCase="'AS'">Assam</span>
+                  <span *ngSwitchCase="'BR'">Bihar</span>
+                  <span *ngSwitchCase="'CH'">Chandigarh</span>
+                  <span *ngSwitchCase="'CT'">Chhattisgarh</span>
+                  <span *ngSwitchCase="'DN'">Dadra and Nagar Haveli and Daman and Diu</span>
+                  <span *ngSwitchCase="'DL'">Delhi</span>
+                  <span *ngSwitchCase="'GA'">Goa</span>
+                  <span *ngSwitchCase="'GJ'">Gujarat</span>
+                  <span *ngSwitchCase="'HR'">Haryana</span>
+                  <span *ngSwitchCase="'HP'">Himachal Pradesh</span>
+                  <span *ngSwitchCase="'JK'">Jammu and Kashmir</span>
+                  <span *ngSwitchCase="'JH'">Jharkhand</span>
+                  <span *ngSwitchCase="'KA'">Karnataka</span>
+                  <span *ngSwitchCase="'KL'">Kerala</span>
+                  <span *ngSwitchCase="'LA'">Ladakh</span>
+                  <span *ngSwitchCase="'LD'">Lakshadweep</span>
+                  <span *ngSwitchCase="'MP'">Madhya Pradesh</span>
+                  <span *ngSwitchCase="'MH'">Maharashtra</span>
+                  <span *ngSwitchCase="'MN'">Manipur</span>
+                  <span *ngSwitchCase="'ML'">Meghalaya</span>
+                  <span *ngSwitchCase="'MZ'">Mizoram</span>
+                  <span *ngSwitchCase="'NL'">Nagaland</span>
+                  <span *ngSwitchCase="'OR'">Odisha</span>
+                  <span *ngSwitchCase="'PY'">Puducherry</span>
+                  <span *ngSwitchCase="'PB'">Punjab</span>
+                  <span *ngSwitchCase="'RJ'">Rajasthan</span>
+                  <span *ngSwitchCase="'SK'">Sikkim</span>
+                  <span *ngSwitchCase="'TN'">Tamil Nadu</span>
+                  <span *ngSwitchCase="'TG'">Telangana</span>
+                  <span *ngSwitchCase="'TR'">Tripura</span>
+                  <span *ngSwitchCase="'UP'">Uttar Pradesh</span>
+                  <span *ngSwitchCase="'UT'">Uttarakhand</span>
+                  <span *ngSwitchCase="'WB'">West Bengal</span>
+              
+              </td>
+              <td>{{totalData[d1].total.confirmed}}</td>
+              <td *ngIf="!totalData[d1].total.other">{{totalData[d1].total.confirmed - totalData[d1].total.deceased - totalData[d1].total.recovered}}</td>
+              <td *ngIf="totalData[d1].total.other">{{totalData[d1].total.confirmed - totalData[d1].total.deceased - totalData[d1].total.recovered - totalData[d1].total.other}}</td> 
+              <td>{{totalData[d1].total.recovered}}</td>
+              <td>{{totalData[d1].total.deceased}}</td>
+              <td>{{totalData[d1].total.tested}}</td>
+              <td>{{totalData[d1].total.vaccinated1 + totalData[d1].total.vaccinated2}}</td>
+            </tr>
+          </tbody>
+          <tbody *ngFor="let d1 of stateCodes;let i=index">
+            <tr *ngIf="d1=='TT'">
+                <td></td>
+                <td><h6>Total</h6></td>
+                <td><h6>{{totalData[d1].total.confirmed}}</h6></td>
+                <td *ngIf="!totalData[d1].total.other"><h6>{{totalData[d1].total.confirmed - totalData[d1].total.deceased - totalData[d1].total.recovered}}</h6></td>
+                <td *ngIf="totalData[d1].total.other"><h6>{{totalData[d1].total.confirmed - totalData[d1].total.deceased - totalData[d1].total.recovered - totalData[d1].total.other}}</h6></td> 
+                <td><h6>{{totalData[d1].total.recovered}}</h6></td>
+                <td><h6>{{totalData[d1].total.deceased}}</h6></td>
+                <td><h6>{{totalData[d1].total.tested}}</h6></td>
+                <td><h6>{{totalData[d1].total.vaccinated1 + totalData[d1].total.vaccinated2}}</h6></td>
+              </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>#</th>
+            <th>State</th>
+            <th>Confirmed</th>
+            <th>Active</th>
+            <th>Recovered</th>
+            <th>Deceased</th>
+            <th>Tested</th>
+            <th>Vaccine Doses Administered</th>
+          </tr>
+      </tfoot>
+      </table>
+  </div>
+</div>
