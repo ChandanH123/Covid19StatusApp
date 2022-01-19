@@ -11,7 +11,7 @@ const routes: Routes = [
     children: [
       {path: 'states_table',component:StatesTableComponent},
       {path: 'districts_table',component:DistrictsTableComponent},
-  ]},
+  ]}
   // {path: '404', component: Error404Component},
   // {path: '**', redirectTo: '/404'}
 ];
