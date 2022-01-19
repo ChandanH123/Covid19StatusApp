@@ -5,7 +5,7 @@ import { DistrictsTableComponent } from './districts-table/districts-table.compo
 import { StatesTableComponent } from './states-table/states-table.component';
 
 const routes: Routes = [
-  { path: '404', redirectTo: 'dashboard/states_table', pathMatch: 'full' },
+  { path: '', redirectTo: 'dashboard/states_table', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent,
     children: [
       {path: 'states_table',component:StatesTableComponent},
